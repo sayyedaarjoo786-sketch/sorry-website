@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Please forgive me</title>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#ffe6f0;
+}
+
+#question{
+font-size:24px;
+margin-top:120px;
+}
+
+button{
+padding:10px 20px;
+font-size:18px;
+margin:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#ff4d88;
+color:white;
+}
+
+#heart{
+display:none;
+width:300px;
+height:260px;
+margin:auto;
+position:relative;
+}
+
+.heartimg{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:10px;
+position:absolute;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="question">Kya aap abhi tak mjhse gussa ho? 😭</div>
+<button onclick="next()">Yes</button>
+
+<div id="heart">
+
+<img src="pic1.jpg" class="heartimg" style="top:0;left:110px;">
+<img src="pic2.jpg" class="heartimg" style="top:30px;left:50px;">
+<img src="pic3.jpg" class="heartimg" style="top:30px;left:170px;">
+<img src="pic4.jpg" class="heartimg" style="top:90px;left:10px;">
+<img src="pic5.jpg" class="heartimg" style="top:90px;left:210px;">
+<img src="pic6.jpg" class="heartimg" style="top:150px;left:60px;">
+<img src="pic7.jpg" class="heartimg" style="top:150px;left:160px;">
+<img src="pic8.jpg" class="heartimg" style="top:210px;left:110px;">
+
+</div>
+
+<script>
+
+let questions=[
+"Ab aap mujhse baat karoge n? 🥺",
+"Ab aap mujhper gussa nahi karoge n? ❤️",
+"Kya aap ab naraz nahi rahoge? 💬",
+"Will you forgive me now? 💖"
+];
+
+let i=0;
+
+function next(){
+
+if(i<questions.length){
+document.getElementById("question").innerText=questions[i];
+i++;
+}
+
+else if(i==questions.length){
+
+document.getElementById("question").style.display="none";
+document.querySelector("button").style.display="none";
+
+document.getElementById("heart").style.display="block";
+
+setTimeout(showFinal,4000);
+
+i++;
+}
+
+}
+
+function showFinal(){
+document.body.innerHTML="<h1>Thank you for forgiving me ❤️</h1><p>You mean everything to me 🥺</p>";
+}
+
+</script>
+
+</body>
+</html>
